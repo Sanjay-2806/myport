@@ -1,0 +1,232 @@
+.about-page {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background Watermark */
+.about-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 25vw;
+  color: rgb(136, 126, 126);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.2;
+  animation: fadeIn 3s infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    
+  }
+  50% {
+    opacity: 0.2;
+    
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+/* Top Left - HR Logo */
+.about-top-left {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 20;
+}
+
+.about-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Top Center - Back Arrow Button */
+.about-back-button {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: all 0.3s ease;
+  color: #000000;
+}
+
+.about-back-button:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.about-back-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Left Sidebar - Social Icons */
+.about-social-sidebar {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.about-social-sidebar .social-icons {
+  gap: 24px;
+}
+
+.about-social-sidebar .social-icon {
+  color: #ffffff;
+}
+
+.about-social-sidebar .social-icon:hover {
+  opacity: 0.7;
+}
+
+/* Main Content Wrapper */
+.about-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 80px;
+  z-index: 10;
+  position: relative;
+}
+
+/* White-Bordered Container */
+.about-container {
+  background: transparent;
+  border: 2px solid #ffffff;
+  padding: 48px 56px;
+  max-width: 700px;
+  flex: 1;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-start;
+  transition: box-shadow 0.3s ease;
+  animation: helloo 2s;
+}
+@keyframes helloo {
+    0%{
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0);
+      opacity: 1
+    }
+}
+
+
+.about-container:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Monospaced Text */
+.about-text {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.8;
+  color: #ffffff;
+  margin: 0;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+/* Avatar Container */
+.about-avatar-container {
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  .about-container {
+    max-width: 100%;
+    min-height: auto;
+    padding: 40px;
+  }
+
+  .about-avatar-container {
+    order: -1;
+  }
+
+  .about-watermark {
+    font-size: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content-wrapper {
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .about-container {
+    padding: 32px 24px;
+  }
+
+  .about-text {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .about-watermark {
+    font-size: 20vw;
+  }
+
+  .about-top-left,
+  .about-back-button,
+  .about-social-sidebar {
+    position: relative;
+    transform: none;
+    margin: 20px;
+  }
+
+  .about-page {
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+  }
+}
+

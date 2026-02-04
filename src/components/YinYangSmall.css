@@ -1,0 +1,19 @@
+.yin-yang-small-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yin-yang-small {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+.yin-yang-small-container:hover .yin-yang-small {
+  transform: rotate(180deg);
+}
+
+.projects-page.light-theme .yin-yang-small {
+  filter: invert(1);
+}

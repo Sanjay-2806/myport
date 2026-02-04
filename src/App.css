@@ -1,0 +1,165 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Top Left - HR Logo */
+.top-left {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+/* Top Right - Say hi */
+.top-right {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 10;
+}
+
+.say-hi{
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.5px;
+  
+  
+}
+.say-hi a{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+/* Left Navigation */
+.nav-left {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 10;
+}
+
+/* Right Navigation */
+.nav-right {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 10;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+/* Bottom Center Navigation */
+.nav-bottom {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 48px;
+  z-index: 10;
+}
+
+.nav-bottom .nav-link {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+/* Center Content */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 5;
+  min-height: 200px;
+}
+
+.click-here {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  margin-top: 8px;
+}
+
+/* Social Icons Container */
+.social-container {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-left,
+  .top-right,
+  .nav-left,
+  .nav-right,
+  .social-container {
+    position: static;
+    transform: none;
+  }
+
+  .app {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+}
+
+
+

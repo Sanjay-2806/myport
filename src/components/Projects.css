@@ -1,0 +1,351 @@
+.projects-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.projects-page.dark-theme {
+  --bg: #000000;
+  --fg: #ffffff;
+  --card-bg: #ffffff;
+  --card-text: #000000;
+  --card-back-bg: #000000;
+  --button-border: #ffffff;
+  --bg-text-color: rgba(255, 255, 255, 0.06);
+  --shadow-strong: rgba(255, 255, 255, 0.15);
+}
+
+.projects-page.light-theme {
+  --bg: #ffffff;
+  --fg: #000000;
+  --card-bg: #181818;
+  --card-text: #ffffff;
+  --card-back-bg: #ffffff;
+  --button-border: #000000;
+  --bg-text-color: rgba(0, 0, 0, 0.08);
+  --shadow-strong: rgba(0, 0, 0, 0.15);
+}
+
+/* Background Typography */
+.bg-typography {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-text {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: rgb(136, 126, 126);
+  font-size: 25vw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  animation: hello 2s infinite;
+  
+}
+
+@keyframes hello {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+   
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+.bg-work {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+/* .bg-swipe { */
+  /* display: none; */
+  /* right: 10%;
+  bottom: 7%;
+  font-size: 3vw;
+  color: rgb(136, 126, 126); */
+/* } */
+
+/* Top Left - Sanjay Logo */
+.projects-top-left {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 20;
+}
+
+.projects-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 1px;
+}
+
+/* Top Center - Back Arrow Button */
+.back-button {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: all 0.3s ease;
+  color: var(--bg);
+}
+
+.back-button:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 4px 20px var(--shadow-strong);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Left Sidebar - Social Icons */
+/* .projects-social-sidebar {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+} */
+
+.projects-social-sidebar .social-icons {
+  gap: 24px;
+}
+
+.projects-social-sidebar .social-icon {
+  color: var(--fg);
+}
+
+.projects-social-sidebar .social-icon:hover {
+  opacity: 0.7;
+}
+
+/* Main Content - Project Cards */
+.projects-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 80px;
+  z-index: 10;
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card Wrapper for 3D Flip */
+.project-card-wrapper {
+  perspective: 1000px;
+  min-width: 320px;
+  max-width: 380px;
+  flex-shrink: 0;
+  height: 400px;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.project-card-wrapper:hover .project-card {
+  transform: rotateY(180deg);
+}
+
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* Leaf shape: rounded top-left and bottom-right, sharp top-right and bottom-left */
+  border-radius: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card-front {
+  background: var(--card-bg);
+  padding: 48px 40px;
+  opacity: 0.9;
+}
+
+.project-card-back {
+  background: var(--card-back-bg);
+  padding: 48px 40px;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--card-text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.project-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--card-text);
+  line-height: 1.6;
+  opacity: 0.8;
+  letter-spacing: 0.01em;
+}
+
+/* GitHub Button on Back */
+.github-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--fg);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 20px;
+  border: 2px solid var(--button-border);
+  border-radius: 12px;
+  background: transparent;
+}
+
+.github-button:hover {
+  background: var(--fg);
+  color: var(--bg);
+  transform: scale(1.05);
+}
+
+.github-button svg {
+  width: 48px;
+  height: 48px;
+}
+
+.github-button span {
+  letter-spacing: 0.5px;
+}
+
+/* Bottom Right - Yin Yang Toggle */
+.projects-yin-yang-toggle {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 20;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.projects-yin-yang-toggle:hover {
+  transform: scale(1.1);
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-container {
+    padding: 0 40px;
+    gap: 24px;
+  }
+
+  .project-card-wrapper {
+    min-width: 280px;
+    height: 360px;
+  }
+
+  .project-card-front,
+  .project-card-back {
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-text {
+    font-size: 20vw;
+  }
+
+  .projects-container {
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .project-card-wrapper {
+    min-width: 260px;
+    height: 320px;
+  }
+
+  .project-card-front,
+  .project-card-back {
+    padding: 32px 24px;
+  }
+
+  .project-title {
+    font-size: 24px;
+  }
+
+  .projects-top-left,
+  .back-button,
+  .projects-social-sidebar,
+  .projects-yin-yang-toggle {
+    position: relative;
+    transform: none;
+    margin: 20px;
+  }
+
+  .projects-page {
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+  }
+}
+

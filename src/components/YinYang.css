@@ -1,0 +1,30 @@
+.yin-yang-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yin-yang {
+  width: 280px;
+  height: 280px;
+  max-width: 90vw;
+  max-height: 90vw;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .yin-yang {
+    width: 200px;
+    height: 200px;
+  }
+}
+

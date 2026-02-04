@@ -1,0 +1,246 @@
+.experience-page {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1d1d23 0%, #020207 55%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.experience-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.experience-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 10vw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+/* Header */
+.experience-top-left {
+  position: absolute;
+  top: 36px;
+  left: 40px;
+  z-index: 10;
+}
+
+.experience-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.experience-back-button {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: radial-gradient(circle at 30% 0, #f5f6f7 0%, #4b4b4c 40%, #0d0c0c 100%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 10;
+  box-shadow: 0 0 18px rgba(240, 243, 243, 0.3);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.experience-back-button:hover {
+  transform: translateX(-50%) scale(1.06);
+  box-shadow: 0 0 26px rgba(244, 246, 246, 0.6);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.experience-back-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Social dock */
+.experience-social-sidebar {
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.experience-social-sidebar .social-icons {
+  gap: 22px;
+}
+
+.experience-social-sidebar .social-icon {
+  color: #ffffff;
+}
+
+.experience-social-sidebar .social-icon:hover {
+  opacity: 0.8;
+}
+
+/* Content layout */
+.experience-content {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(320px, 380px) minmax(380px, 520px);
+  gap: 40px;
+  align-items: stretch;
+  padding: 0 80px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.experience-left,
+.experience-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.exp-role-card,
+.exp-detail-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.8));
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(0, 255, 255, 0.08);
+  padding: 20px 22px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-role-card::before,
+.exp-detail-card::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(78, 243, 255, 0.25), transparent 70%);
+  top: -60px;
+  right: -40px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.exp-role-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.exp-role-company {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 12px;
+}
+
+.exp-role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.18), transparent 60%);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Right details list */
+.exp-detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 0 0;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(232, 232, 232, 0.9);
+  display: grid;
+  gap: 8px;
+}
+
+.exp-detail-list li {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.exp-detail-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 7px solid #ffffff;
+}
+
+@media (max-width: 960px) {
+  .experience-content {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 720px;
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-page {
+    height: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 24px 0 40px;
+  }
+
+  .experience-top-left,
+  .experience-back-button,
+  .experience-social-sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 10px 24px;
+  }
+
+  .experience-watermark {
+    font-size: 22vw;
+  }
+}
+
