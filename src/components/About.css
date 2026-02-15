@@ -25,22 +25,10 @@
   pointer-events: none;
   user-select: none;
   opacity: 0.2;
-  animation: fadeIn 3s infinite;
+  
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0.1;
-    
-  }
-  50% {
-    opacity: 0.2;
-    
-  }
-  100% {
-    opacity: 0.1;
-  }
-}
+
 
 /* Top Left - HR Logo */
 .about-top-left {
@@ -229,4 +217,3 @@
     overflow-y: auto;
   }
 }
-
