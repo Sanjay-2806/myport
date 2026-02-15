@@ -42,7 +42,7 @@ npm run preview
 
 ## Design Elements
 
-- **Top Left**: Cursive "HR" logo
+- **Top Left**: Cursive "sanjay" logo
 - **Top Right**: "Say hi.." text
 - **Left Navigation**: "Experience" and "Projects" (vertical)
 - **Right Navigation**: "Feats" (vertical)
