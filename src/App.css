@@ -260,3 +260,18 @@
 }
 
 
+button,
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+.nav-link,
+.feats-card,
+.skill-card,
+.project-card,
+.center-content,
+.home-yin-yang-toggle {
+  cursor: pointer !important;
+  user-select: none;
+}
+
