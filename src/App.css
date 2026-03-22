@@ -1,15 +1,26 @@
 .app {
   width: 100vw;
   height: 100vh;
-  background: #ffffff;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: var(--bg, #000000);
+  color: var(--fg, #ffffff);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Top Left - HR Logo */
+.app.dark-theme {
+  --bg: #000000;
+  --fg: #ffffff;
+}
+
+.app.light-theme {
+  --bg: #ffffff;
+  --fg: #000000;
+}
+
 .top-left {
   position: absolute;
   top: 40px;
@@ -21,7 +32,7 @@
   font-family: 'Dancing Script', cursive;
   font-size: 32px;
   font-weight: 600;
-  color: #000000;
+  color: var(--fg);
   letter-spacing: 1px;
 }
 
@@ -33,16 +44,15 @@
   z-index: 10;
 }
 
-.say-hi{
+.say-hi {
   font-family: 'Dancing Script', cursive;
   font-size: 25px;
   font-weight: 300;
-  color: #000000;
+  color: var(--fg);
   letter-spacing: 0.5px;
-  
-  
 }
-.say-hi a{
+
+.say-hi a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -77,16 +87,21 @@
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #000000;
+  color: var(--fg);
   text-decoration: none;
   letter-spacing: 0.5px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.25s ease;
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
 
 .nav-link:hover {
   opacity: 0.6;
+  transform: translateX(4px);
+}
+
+.nav-bottom .nav-link:hover {
+  transform: translateY(-2px);
 }
 
 /* Bottom Center Navigation */
@@ -114,13 +129,18 @@
   gap: 32px;
   z-index: 5;
   min-height: 200px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.center-content:hover {
+  transform: scale(1.02);
 }
 
 .click-here {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: #000000;
+  color: var(--fg);
   letter-spacing: 1px;
   text-transform: lowercase;
   margin-top: 8px;
@@ -134,8 +154,59 @@
   z-index: 10;
 }
 
+/* Home Yin Yang Toggle */
+.home-yin-yang-toggle {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 20;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.home-yin-yang-toggle:hover {
+  transform: scale(1.1);
+}
+
+.app.light-theme .yin-yang-small {
+  filter: invert(1);
+}
+
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .top-left {
+    left: 24px;
+    top: 28px;
+  }
+
+  .top-right {
+    right: 24px;
+    top: 28px;
+  }
+
+  .nav-left {
+    left: 24px;
+    gap: 24px;
+  }
+
+  .nav-right {
+    right: 24px;
+    gap: 24px;
+  }
+
+  .nav-bottom {
+    bottom: 28px;
+    gap: 36px;
+  }
+
+  .social-container {
+    left: 24px;
+    bottom: 28px;
+  }
+}
+
 @media (max-width: 768px) {
+
   .top-left,
   .top-right,
   .nav-left,
@@ -148,18 +219,42 @@
   .app {
     flex-direction: column;
     padding: 20px;
+    gap: 24px;
   }
 
   .nav-left,
   .nav-right {
     flex-direction: row;
+    justify-content: center;
+    gap: 20px;
   }
 
   .nav-link {
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
+
+  .nav-link:hover {
+    transform: translateY(-2px);
+  }
 }
 
+@media (max-width: 480px) {
+  .logo {
+    font-size: 26px;
+  }
 
+  .say-hi {
+    font-size: 20px;
+  }
 
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .nav-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
