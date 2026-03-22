@@ -270,6 +270,7 @@ input[type="submit"],
 .skill-card,
 .project-card,
 .center-content,
+.click-here,
 .home-yin-yang-toggle {
   cursor: pointer !important;
   user-select: none;
