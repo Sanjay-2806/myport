@@ -7,10 +7,16 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Feats from './components/Feats'
 import Experience from './components/Experience'
+import YinYangSmall from './components/YinYangSmall'
 
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [theme, setTheme] = useState('dark') // dark or light
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+  }
 
   const handleProjectsClick = () => {
     setCurrentPage('projects')
@@ -37,28 +43,49 @@ function App() {
   }
 
   if (currentPage === 'projects') {
-    return <Projects onBack={handleBack} />
+    return (
+      <div key="projects" className="page-enter">
+        <Projects onBack={handleBack} />
+      </div>
+    )
   }
 
   if (currentPage === 'about') {
-    return <About onBack={handleBack} />
+    return (
+      <div key="about" className="page-enter">
+        <About onBack={handleBack} />
+      </div>
+    )
   }
 
   if (currentPage === 'skills') {
-    return <Skills onBack={handleBack} />
+    return (
+      <div key="skills" className="page-enter">
+        <Skills onBack={handleBack} />
+      </div>
+    )
   }
 
   if (currentPage === 'feats') {
-    return <Feats onBack={handleBack} />
+    return (
+      <div key="feats" className="page-enter">
+        <Feats onBack={handleBack} />
+      </div>
+    )
   }
 
   if (currentPage === 'experience') {
-    return <Experience onBack={handleBack} />
+    return (
+      <div key="experience" className="page-enter">
+        <Experience onBack={handleBack} />
+      </div>
+    )
   }
 
   return (
-    <div className="app">
-      {/* Top Left - HR Logo */}
+
+    <div key="home" className={`app page-enter ${theme}-theme`}>
+
       <div className="top-left">
         <span className="logo">Sanjay</span>
       </div>
@@ -114,8 +141,12 @@ function App() {
         <SocialIcons />
       </div>
 
+      {/* Bottom Right - Yin Yang Toggle */}
+      <div className="home-yin-yang-toggle" onClick={toggleTheme} role="button" aria-label="Toggle theme" tabIndex={0}>
+        <YinYangSmall theme={theme} />
+      </div>
 
-      
+
     </div>
   )
 }
