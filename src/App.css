@@ -258,3 +258,16 @@
     gap: 16px;
   }
 }
+
+button,
+a,
+.nav-item,
+.home-btn,
+.feats-card,
+.skill-card,
+.project-card,
+.social-icon,
+.clickable {
+  cursor: pointer !important;
+  user-select: none;
+}
