@@ -135,11 +135,12 @@ const Skills = ({ onBack }) => {
             <li>Java</li>
             <li>Python</li>
             <li>Mysql</li>
+            <li>Sql</li>
             <li>JavaScript</li>
             <li>React.js</li>
       
           </ul>
-          <p className='p'>Tools :VS Code,Cursor Ai, Anti Gravity, Colab, Figma, Sketchfab.</p>
+          <p className='p'>Tools :VS Code,Cursor Ai, Anti Gravity, Colab, Figma, Sketchfab, Claude Code, Jules.</p>
         </div>
 
       </div>
