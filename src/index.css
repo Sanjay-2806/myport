@@ -1,8 +1,31 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  /* cursor: url('cursor.png'), auto; */
+/* } */
+
+/* body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+} */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* cursor: url('cursor.png'), auto; */
+  cursor: url('long-Tail-Arrow.png'), auto;
 }
 
 body {
@@ -18,6 +41,92 @@ body {
 
 #root {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
+/* ---- Page Transitions ---- */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content-stagger>* {
+  opacity: 0;
+  animation: contentSlideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.content-stagger>*:nth-child(1) {
+  animation-delay: 0.06s;
+}
+
+.content-stagger>*:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.content-stagger>*:nth-child(3) {
+  animation-delay: 0.18s;
+}
+
+.content-stagger>*:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.content-stagger>*:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.content-stagger>*:nth-child(6) {
+  animation-delay: 0.36s;
+}
+
+.content-stagger>*:nth-child(7) {
+  animation-delay: 0.42s;
+}
+
+.content-stagger>*:nth-child(8) {
+  animation-delay: 0.48s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .page-enter,
+  .content-stagger>* {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
