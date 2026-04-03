@@ -19,15 +19,18 @@ const Projects = ({ onBack }) => {
     {
       title: 'Portfolio',
       description: 'Minimalist portfolio design showcasing creative work and professional achievements.',
-      githubUrl: 'https://sanjay28.vercel.app/',
+      githubUrl: 'https://github.com/Sanjay-2806',
     },
     {
       title: 'Signbridge',
       description: 'Sign Bridge is an AI-based communication system that translates sign language gestures into readable text and speech in real time. Using computer vision and machine learning, it bridges the communication gap between hearing-impaired users and others, enabling more inclusive and accessible interaction.',
-      githubUrl: 'https://github.com/Sanjay-2806/ibm',
+      githubUrl: 'https://github.com/Sanjay-2806/odoo',
     },
-    
-    
+    {
+      title: 'Real-time ID Card Detection',
+      description: 'Developed a real-time ID Card Detection system using a custom-trained Roboflow model and webcam input to detect whether a person is showing a valid ID card in front of the camera. Built for identity verification and monitoring applications using computer vision.',
+      githubUrl: 'https://github.com/Sanjay-2806/id-card-detection',
+    },
   ]
 
   return (
@@ -35,7 +38,7 @@ const Projects = ({ onBack }) => {
       {/* Background Typography */}
       <div className="bg-typography">
         <span className="bg-text bg-work">WORK</span>
-        <span className="bg-text bg-swipe"></span>
+        <span className="bg-text bg-swipe">SCROLL →</span>
       </div>
 
       {/* Top Left - Sanjay Logo */}
@@ -53,7 +56,7 @@ const Projects = ({ onBack }) => {
      
 
       {/* Main Content - Project Cards */}
-      <div className="projects-container">
+      <div className="projects-container content-stagger">
         {projects.map((project, index) => (
           <div key={index} className="project-card-wrapper">
             <div className="project-card">
