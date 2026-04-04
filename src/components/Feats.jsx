@@ -110,6 +110,14 @@ const featsData = [
     image: null,
     link: 'https://www.skillrack.com/faces/resume.xhtml?id=404172&key=ab23aa7675e7552a7e312e27e31190a671ba3b0d',
   },
+   {
+  title: 'Codeforces Profile',
+  hashtags: ['#Code', '#Learn', '#Cpp', '#CompetitiveProgramming'],
+  date: '2022',
+  label: 'Codeforces',
+  image: 'https://codeforces-readme-stats.vercel.app/api/card?username=sanjuzzz28',
+  link: 'https://codeforces.com/profile/sanjuzzz28',
+},
 ]
 
 const Feats = ({ onBack }) => {
