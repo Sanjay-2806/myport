@@ -115,7 +115,7 @@ const featsData = [
   hashtags: ['#Code', '#Learn', '#Cpp', '#CompetitiveProgramming'],
   date: '2022',
   label: 'Codeforces',
-  image: 'https://codeforces-readme-stats.vercel.app/api/card?username=sanjuzzz28',
+  image: 'https://codeforces-readme-stats.vercel.app/api/card?username=sanjuzzz28&theme=dark',
   link: 'https://codeforces.com/profile/sanjuzzz28',
 },
 ]
