@@ -24,7 +24,7 @@ const Projects = ({ onBack }) => {
     {
       title: 'Signbridge',
       description: 'Sign Bridge is an AI-based communication system that translates sign language gestures into readable text and speech in real time. Using computer vision and machine learning, it bridges the communication gap between hearing-impaired users and others, enabling more inclusive and accessible interaction.',
-      githubUrl: 'https://github.com/Sanjay-2806/odoo',
+      githubUrl: 'https://github.com/Sanjay-2806/hacker',
     },
     {
       title: 'Real-time ID Card Detection',
