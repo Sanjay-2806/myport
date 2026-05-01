@@ -19,7 +19,7 @@ const Projects = ({ onBack }) => {
     {
       title: 'Portfolio',
       description: 'Minimalist portfolio design showcasing creative work and professional achievements.',
-      githubUrl: 'https://github.com/Sanjay-2806',
+      githubUrl: 'https://github.com/Sanjay-2806/myport',
     },
     {
       title: 'Signbridge',
